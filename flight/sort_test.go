@@ -1,11 +1,11 @@
-package main
+package flight
 
 import (
 	"bytes"
 	"testing"
 )
 
-func TestSortFlights(t *testing.T) {
+func TestSortPath(t *testing.T) {
 	tests := []struct {
 		name    string
 		flights [][]string
@@ -131,7 +131,7 @@ func TestSortFlights(t *testing.T) {
 	}
 
 	for _, tc := range tests {
-		got, _ := sortFlights(tc.flights)
+		got, _ := SortPath(tc.flights)
 
 		if bytes.Compare(got, tc.want) != 0 {
 			t.Fatalf("%v expected: %v, got: %v", tc.name, string(tc.want), string(got))
